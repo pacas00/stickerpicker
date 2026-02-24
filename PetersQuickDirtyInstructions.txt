@@ -8,8 +8,8 @@ Prep
 2. CD into directory
 
 3. Set up a virtual environment. (Because dont break package installed python3)
-   Create with virtualenv -p python3 .venv
-   Activate with source .venv/bin/activate
+   Create with `virtualenv -p python3 .venv`
+   Activate with `source .venv/bin/activate`
 
 4. Install the utility commands and their dependencies with pip install .
 
