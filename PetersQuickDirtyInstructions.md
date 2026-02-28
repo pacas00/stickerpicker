@@ -1,6 +1,16 @@
 This is a combination of the documentation from https://github.com/maunium/stickerpicker that can be referenced in one place.
 
 
+you need FFMPEG and gifsicle.
+Install FFMPEG is a package manager friendly way. Do the below for gifsicle.
+
+```
+curl -sL http://www.lcdf.org/gifsicle/gifsicle-1.91.tar.gz | tar -zx
+cd gifsicle-1.91
+./configure --disable-gifview
+sudo make install
+```
+
 Prep
 
 1. `git clone https://github.com/pacas00/stickerpicker.git`
