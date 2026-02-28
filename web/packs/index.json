@@ -1,7 +1,8 @@
 {
   "packs": [
     "calculon_emotes.json",
-	"peters_emotes.json"
+    "peters_emotes.json",
+    "noto_emoji.json"
   ],
   "homeserver_url": "https://matrix.petercashel.net"
 }
