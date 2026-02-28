@@ -250,7 +250,7 @@ def _convert_sticker(data: bytes) -> (bytes, str, int, int):
                         raise RuntimeError(f"Run {cmd} failed with code {retcode}, Error occurred:\n{result.stderr}")
                     gif.seek(0)
                     data = gif.read()
-    mimetype = guess_mime(data)
+                    mimetype = guess_mime(data)
     if mimetype == "image/webp":
         data = webp_to_gif_or_png(data)
         mimetype = guess_mime(data)
@@ -320,7 +320,8 @@ def add_thumbnails(stickers: List[matrix.StickerInfo], stickers_data: Dict[str, 
     thumbnails.mkdir(parents=True, exist_ok=True)
 
     for sticker in stickers:       
-        image_data, _, _ = convert_image(stickers_data[sticker["url"]], 128, 128)
+        mimetype = guess_mime(stickers_data[sticker["url"]])
+        image_data, _, _ = _convert_image(stickers_data[sticker["url"]], mimetype, 128, 128)
         
         name = sticker["url"].split("/")[-1]
         thumbnail_path = thumbnails / name
